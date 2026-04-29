@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Concept 1 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 1</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link active">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Dialogs</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-logo">Take<em>-off</em></div>
+    <h1 class="auth-heading">Sign in</h1>
+
+    <!-- Default state -->
+    <div id="form-default">
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" value="user@example.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" value="password" autocomplete="current-password">
+      </div>
+      <button class="btn btn-primary btn-full" onclick="showError()">Sign in</button>
+    </div>
+
+    <!-- Error state (hidden by default, click "Sign in" to reveal) -->
+    <div id="form-error" style="display:none">
+      <div class="field">
+        <label for="email-err">Email address</label>
+        <input id="email-err" type="email" value="wrong@example.com" style="border-color: var(--color-danger)">
+      </div>
+      <div class="field">
+        <label for="password-err">Password</label>
+        <input id="password-err" type="password" value="wrongpass" style="border-color: var(--color-danger)">
+        <span class="error">Incorrect email or password. Please try again.</span>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="hideError()">Sign in</button>
+    </div>
+
+    <div class="auth-switch">
+      Don't have an account? <a href="page-2.html">Create one</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c1-theme', t); } catch(e) {}
+}
+function showError() {
+  document.getElementById('form-default').style.display = 'none';
+  document.getElementById('form-error').style.display = 'block';
+}
+function hideError() {
+  document.getElementById('form-error').style.display = 'none';
+  document.getElementById('form-default').style.display = 'block';
+}
+try { const s = localStorage.getItem('c1-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>

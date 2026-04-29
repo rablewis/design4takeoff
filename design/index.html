@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take-off — Design Mockups</title>
+<link rel="stylesheet" href="shared/reset.css">
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --border: #30363d;
+    --text: #e6edf3; --muted: #8b949e; --primary: #58a6ff;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; padding: 48px 24px; }
+  .hub { max-width: 800px; margin: 0 auto; }
+  .hub-logo { font-size: 28px; font-weight: 800; letter-spacing: -.03em; margin-bottom: 8px; }
+  .hub-logo em { color: var(--primary); font-style: normal; }
+  .hub-sub { font-size: 14px; color: var(--muted); margin-bottom: 40px; line-height: 1.6; }
+  .concept-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; margin-bottom: 20px; background: var(--surface);
+    transition: border-color .15s;
+  }
+  .concept-card:hover { border-color: var(--primary); }
+  .concept-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+  .concept-name { font-size: 17px; font-weight: 700; color: var(--text); }
+  .concept-tag {
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em;
+    color: var(--primary); background: rgba(88,166,255,.1); padding: 3px 10px; border-radius: 999px;
+  }
+  .concept-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+  .page-links { display: flex; flex-wrap: wrap; gap: 6px; }
+  .page-link {
+    padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); transition: all .15s; display: block;
+  }
+  .page-link:hover { border-color: var(--primary); color: var(--primary); background: rgba(88,166,255,.06); }
+  .page-link.primary-link {
+    background: var(--primary); color: #000; border-color: var(--primary); font-weight: 600;
+  }
+  .page-link.primary-link:hover { background: #79c0ff; border-color: #79c0ff; }
+  .hub-footer { margin-top: 48px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 24px; }
+</style>
+</head>
+<body>
+<div class="hub">
+  <div class="hub-logo">Take<em>-off</em> <span style="font-weight:300;font-size:18px;color:var(--muted)">Design Mockups</span></div>
+  <p class="hub-sub">
+    Interactive HTML mockups for evaluating layout options, colour schemes, and interaction patterns before writing production code.
+    Use the theme switcher on each page to toggle between Light, Dark, and Brand colour schemes.
+  </p>
+
+  <!-- Concept 1 -->
+  <div class="concept-card">
+    <div class="concept-header">
+      <span class="concept-name">Concept 1 — Sidebar + Canvas</span>
+      <span class="concept-tag">In progress</span>
+    </div>
+    <p class="concept-desc">
+      Dark top bar with inline job name and three-tab navigation. Fixed 284 px sidebar holds a six-mode switcher
+      (Legend, Count, Annotate, Measure, Area, Erase) with context-sensitive panels below it.
+      The drawing canvas fills the remaining space with floating page-nav, zoom controls, and minimap overlays.
+      Annotations Report and Cost Table are full-page scrollable views sharing the same top bar.
+    </p>
+    <div class="page-links">
+      <a href="concept-1/page-4.html" class="page-link primary-link">→ Open workspace</a>
+      <a href="concept-1/page-1.html" class="page-link">Sign In</a>
+      <a href="concept-1/page-2.html" class="page-link">Sign Up</a>
+      <a href="concept-1/page-3.html" class="page-link">Access Restricted</a>
+      <a href="concept-1/page-4.html" class="page-link">Workspace</a>
+      <a href="concept-1/page-5.html" class="page-link">Annotations Report</a>
+      <a href="concept-1/page-6.html" class="page-link">Cost Table</a>
+      <a href="concept-1/page-7.html" class="page-link">Dialogs</a>
+    </div>
+  </div>
+
+  <!-- Concept 2 placeholder -->
+  <div class="concept-card" style="opacity:.45">
+    <div class="concept-header">
+      <span class="concept-name">Concept 2</span>
+      <span class="concept-tag" style="background:rgba(139,148,158,.1);color:var(--muted)">Planned</span>
+    </div>
+    <p class="concept-desc">Alternative layout approach — not yet started.</p>
+    <div class="page-links">
+      <span class="page-link" style="cursor:default">Coming soon</span>
+    </div>
+  </div>
+
+  <div class="hub-footer">
+    See <code>docs/getting-started-plan.md</code> for the mockup system rationale and structure.
+  </div>
+</div>
+</body>
+</html>

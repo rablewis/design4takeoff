@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dialogs — Concept 1 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+<style>
+  .dialogs-page { min-height: 100vh; padding-top: var(--mockup-nav-h); background: var(--color-page-bg); }
+  .dialogs-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+  .dialogs-page-heading {
+    font-size: var(--font-2xl); font-weight: 800; color: var(--color-text);
+    letter-spacing: -.02em; margin-bottom: 6px;
+  }
+  .dialogs-page-sub { font-size: var(--font-md); color: var(--color-text-muted); margin-bottom: 32px; }
+</style>
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 1</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link active">Dialogs</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="dialogs-page">
+  <div class="dialogs-wrap">
+    <h1 class="dialogs-page-heading">Dialogs</h1>
+    <p class="dialogs-page-sub">All five dialogs shown inline for design review. In the live app they appear as modals over the workspace — see <a href="page-4.html" style="color:var(--color-primary)">page 4</a> for the modal versions.</p>
+
+    <div class="dialogs-grid">
+
+      <!-- Name Room dialog -->
+      <div class="dialog-preview">
+        <div class="dialog-preview-tag">Appears after closing a room boundary</div>
+        <div class="dialog-title">Name this room</div>
+        <div class="dialog-items-box">
+          <div class="dialog-items-lbl">Items found inside boundary:</div>
+          <div class="di-row">
+            <span class="di-item"><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#3b82f6;margin-right:5px;"></span>Socket Outlet</span>
+            <span class="di-count">6</span>
+          </div>
+          <div class="di-row">
+            <span class="di-item"><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#10b981;margin-right:5px;"></span>Light Switch</span>
+            <span class="di-count">2</span>
+          </div>
+          <div class="di-row">
+            <span class="di-item"><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#f59e0b;margin-right:5px;"></span>Downlight</span>
+            <span class="di-count">4</span>
+          </div>
+        </div>
+        <div class="dialog-field">
+          <label>Room name</label>
+          <input type="text" value="Living Room" placeholder="e.g. Kitchen">
+          <span class="hint">Leave blank to use an auto-generated name.</span>
+        </div>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm">Save room</button>
+        </div>
+      </div>
+
+      <!-- Name Room — empty variant -->
+      <div class="dialog-preview">
+        <div class="dialog-preview-tag">Name room — no items found inside</div>
+        <div class="dialog-title">Name this room</div>
+        <div class="dialog-items-box">
+          <div class="dialog-items-lbl">Items found inside boundary:</div>
+          <p class="di-empty">No items found inside this boundary.</p>
+        </div>
+        <div class="dialog-field">
+          <label>Room name</label>
+          <input type="text" placeholder="e.g. Stairwell">
+          <span class="hint">Leave blank to use an auto-generated name.</span>
+        </div>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm">Save room</button>
+        </div>
+      </div>
+
+      <!-- Label Measurement dialog -->
+      <div class="dialog-preview">
+        <div class="dialog-preview-tag">Appears after placing two measurement points</div>
+        <div class="dialog-title">Record measurement</div>
+        <div class="dialog-items-box">
+          <div class="dialog-metric">8.450 <span>metres</span></div>
+          <div class="dialog-metric-note">At scale 1:50 on A1 paper</div>
+        </div>
+        <div class="dialog-field">
+          <label>Label</label>
+          <input type="text" value="Wall Length" list="meas-cats" placeholder="Enter or select a label">
+          <datalist id="meas-cats"><option value="Wall Length"><option value="Skirting"></datalist>
+          <span class="hint">Enter an existing label to add to its total, or a new label to create a category.</span>
+        </div>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm">Save measurement</button>
+        </div>
+      </div>
+
+      <!-- Label Area dialog -->
+      <div class="dialog-preview">
+        <div class="dialog-preview-tag">Appears after closing an area polygon</div>
+        <div class="dialog-title">Record area</div>
+        <div class="dialog-items-box">
+          <div class="dialog-metric">24.75 <span>m²</span></div>
+          <div class="dialog-metric-note">At scale 1:50 on A1 paper</div>
+        </div>
+        <div class="dialog-field">
+          <label>Label</label>
+          <input type="text" value="Floor Area" list="area-cats" placeholder="Enter or select a label">
+          <datalist id="area-cats"><option value="Floor Area"><option value="Ceiling Area"></datalist>
+          <span class="hint">Enter an existing label to add to its total, or a new label to create a category.</span>
+        </div>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm">Save area</button>
+        </div>
+      </div>
+
+      <!-- Clear Workspace confirmation -->
+      <div class="dialog-preview">
+        <div class="dialog-preview-tag">Triggered by the Clear button in the top bar</div>
+        <div class="dialog-title">Clear workspace?</div>
+        <p class="dialog-body">This will unload the drawing and remove all markup — legend items, count marks, annotations, measurements, and areas. This cannot be undone.</p>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-danger btn-sm">Clear workspace</button>
+        </div>
+      </div>
+
+      <!-- Clear Annotations confirmation -->
+      <div class="dialog-preview">
+        <div class="dialog-preview-tag">Triggered by "Clear all annotations" in the sidebar</div>
+        <div class="dialog-title">Delete all annotations?</div>
+        <p class="dialog-body">All saved room annotations will be permanently removed. Count marks and measurements will not be affected.</p>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-danger btn-sm">Delete annotations</button>
+        </div>
+      </div>
+
+    </div><!-- /dialogs-grid -->
+  </div>
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c1-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c1-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>

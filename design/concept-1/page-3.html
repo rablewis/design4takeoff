@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Restricted — Concept 1 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 1</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link active">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Dialogs</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-logo">Take<em>-off</em></div>
+    <h1 class="auth-heading">Your trial has ended</h1>
+
+    <p style="font-size:13px; color:var(--color-text-body); line-height:1.6; margin-bottom:4px">
+      Full access includes everything you need to produce professional quantity take-offs from construction drawings:
+    </p>
+
+    <ul class="feature-list">
+      <li>Unlimited PDF drawings and job sessions</li>
+      <li>Legend OCR scanning and symbol counting</li>
+      <li>Room annotation with per-room item breakdowns</li>
+      <li>Distance measurement with category totals</li>
+      <li>Area measurement with category totals</li>
+      <li>Cost table with labour, material and rate columns</li>
+      <li>Annotated PDF export and CSV download</li>
+      <li>Works offline after first visit</li>
+    </ul>
+
+    <!-- Upgrade button (disabled — payment not yet integrated) -->
+    <button class="btn btn-disabled btn-full" disabled title="Payment integration coming soon">
+      Upgrade to full access
+    </button>
+    <p class="upgrade-note">Payment integration coming soon — contact us to arrange access.</p>
+
+    <!-- Access status badge shown even on this screen -->
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:16px">
+      <span class="badge badge-offline" style="font-size:11px">Trial expired</span>
+      <span style="font-size:11px; color:var(--color-text-muted)">Cached status · offline</span>
+    </div>
+
+    <button class="btn btn-ghost btn-full">Sign out</button>
+  </div>
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c1-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c1-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>

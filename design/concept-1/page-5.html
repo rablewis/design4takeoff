@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotations — Concept 1 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 1</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link active">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Dialogs</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="app-shell">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-logo">Take<em>-off</em></div>
+    <div class="topbar-job">
+      <span class="topbar-job-prefix">Job:</span>
+      <span class="topbar-job-name">Block A — Ground Floor</span>
+    </div>
+    <nav class="topbar-tabs">
+      <a href="page-4.html" class="topbar-tab">Workspace</a>
+      <a href="page-5.html" class="topbar-tab active">Annotations</a>
+      <a href="page-6.html" class="topbar-tab">Cost Table</a>
+    </nav>
+    <div class="topbar-actions">
+      <span class="badge badge-trial">Trial — 11 days</span>
+      <div class="topbar-divider"></div>
+      <button class="topbar-btn">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v10M4 7l4 4 4-4M2 13h12"/></svg>
+        PDF
+      </button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <div class="content-scroll">
+      <div class="content-wrap">
+
+        <h1 class="page-heading">Annotations report</h1>
+        <p class="page-sub">3 rooms · 2 pages</p>
+
+        <!-- Plain-text summary -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Plain-text summary</span>
+            <button class="copy-btn" style="position:static" onclick="copyText()">⧉ Copy</button>
+          </div>
+          <div class="card-body" style="padding:0">
+            <div class="summary-box" id="summary-text" style="border:none;border-radius:0">Living Room (Page 1)
+  Socket Outlet: 6
+  Light Switch: 2
+  Downlight: 4
+  Total items: 12
+
+Kitchen (Page 1)
+  Socket Outlet: 4
+  Light Switch: 1
+  Downlight: 3
+  Extractor Fan: 2
+  Total items: 10
+
+Bedroom 1 (Page 2)
+  Socket Outlet: 2
+  Downlight: 4
+  Smoke Detector: 1
+  Total items: 7</div>
+          </div>
+        </div>
+
+        <!-- Living Room -->
+        <div class="card">
+          <div class="card-head">
+            <div class="room-head" style="margin:0">
+              <span class="room-name">Living Room</span>
+              <span class="room-page-tag">Page 1</span>
+            </div>
+          </div>
+          <div class="card-body" style="padding:0">
+            <table class="data-table">
+              <thead>
+                <tr><th>Item</th><th class="r">Count</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td>
+                  <td class="r">6</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#10b981"></span>Light Switch</td>
+                  <td class="r">2</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td>
+                  <td class="r">4</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Total</td>
+                  <td class="r">12</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Kitchen -->
+        <div class="card">
+          <div class="card-head">
+            <div class="room-head" style="margin:0">
+              <span class="room-name">Kitchen</span>
+              <span class="room-page-tag">Page 1</span>
+            </div>
+          </div>
+          <div class="card-body" style="padding:0">
+            <table class="data-table">
+              <thead>
+                <tr><th>Item</th><th class="r">Count</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td>
+                  <td class="r">4</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#10b981"></span>Light Switch</td>
+                  <td class="r">1</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td>
+                  <td class="r">3</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#ef4444"></span>Extractor Fan</td>
+                  <td class="r">2</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Total</td>
+                  <td class="r">10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bedroom 1 -->
+        <div class="card">
+          <div class="card-head">
+            <div class="room-head" style="margin:0">
+              <span class="room-name">Bedroom 1</span>
+              <span class="room-page-tag">Page 2</span>
+            </div>
+          </div>
+          <div class="card-body" style="padding:0">
+            <table class="data-table">
+              <thead>
+                <tr><th>Item</th><th class="r">Count</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td>
+                  <td class="r">2</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td>
+                  <td class="r">4</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#8b5cf6"></span>Smoke Detector</td>
+                  <td class="r">1</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Total</td>
+                  <td class="r">7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="toast-ok">✓</span><span id="toast-msg">Copied</span></div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c1-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c1-theme'); if (s) setTheme(s); } catch(e) {}
+function copyText() {
+  const t = document.getElementById('summary-text').textContent;
+  navigator.clipboard?.writeText(t).then(() => {
+    document.getElementById('toast-msg').textContent = 'Copied to clipboard';
+    const el = document.getElementById('toast');
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2000);
+  });
+}
+</script>
+</body>
+</html>

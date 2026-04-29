@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — Concept 1 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 1</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link active">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Dialogs</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-logo">Take<em>-off</em></div>
+    <h1 class="auth-heading">Create account</h1>
+
+    <!-- Form state -->
+    <div id="form-state">
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="At least 8 characters" autocomplete="new-password">
+        <span class="hint">Minimum 8 characters</span>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="showSuccess()">Create account</button>
+    </div>
+
+    <!-- Success state (click "Create account" to reveal) -->
+    <div id="success-state" style="display:none">
+      <div class="auth-success">
+        <strong>Account created!</strong> Your 14-day free trial has started. A confirmation email has been sent to <strong>you@example.com</strong>.
+      </div>
+      <a href="page-4.html" class="btn btn-primary btn-full" style="display:flex; text-decoration:none">Go to workspace →</a>
+    </div>
+
+    <div class="auth-switch">
+      Already have an account? <a href="page-1.html">Sign in</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c1-theme', t); } catch(e) {}
+}
+function showSuccess() {
+  document.getElementById('form-state').style.display = 'none';
+  document.getElementById('success-state').style.display = 'block';
+}
+try { const s = localStorage.getItem('c1-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>
