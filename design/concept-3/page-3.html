@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Restricted — Concept 3 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="../concept-1/themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 3</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link active">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Inline Forms</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="app-shell ghost">
+
+  <aside class="section-nav">
+    <div class="sn-logo-slot"><button class="sn-logo-btn">T</button></div>
+    <nav class="sn-nav">
+      <button class="sn-btn" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></button>
+      <button class="sn-btn" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></button>
+      <button class="sn-btn" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></button>
+    </nav>
+    <div class="sn-bottom">
+      <button class="sn-btn" disabled><span class="sn-status-dot amber"></span></button>
+      <button class="sn-btn" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></button>
+    </div>
+  </aside>
+
+  <aside class="context-panel"></aside>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <div class="lock-icon">🔒</div>
+      <div style="text-align:center;margin-bottom:16px">
+        <span class="access-badge">⚠ Trial expired</span>
+      </div>
+      <h1 class="auth-heading" style="text-align:center">Your trial has ended</h1>
+      <p style="font-size:var(--font-base);color:var(--color-text-muted);text-align:center;margin-top:6px;margin-bottom:16px;line-height:1.5">
+        Upgrade to continue counting, measuring, and costing from your drawings.
+      </p>
+      <ul class="feature-list">
+        <li>Unlimited PDF drawings</li>
+        <li>Legend OCR &amp; item counting</li>
+        <li>Measurement &amp; area tools</li>
+        <li>Annotations &amp; cost table</li>
+        <li>PDF export</li>
+      </ul>
+      <button class="btn btn-primary btn-full btn-disabled" disabled>Upgrade</button>
+      <p class="upgrade-note">Payment integration coming soon — contact us to arrange access.</p>
+      <div class="auth-switch"><a href="page-1.html">Sign out</a></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = '../concept-1/themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c3-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c3-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* concept-2 / themes / light.css — Light / neutral colour scheme */
+:root {
+  --color-page-bg:       #f1f5f9;
+  --color-canvas-bg:     #e8e5d8;
+  --color-surface:       #ffffff;
+  --color-surface-alt:   #f8fafc;
+  --color-surface-hover: #f1f5f9;
+
+  --color-border:        #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  --color-text:          #0f172a;
+  --color-text-body:     #334155;
+  --color-text-muted:    #64748b;
+  --color-text-subtle:   #94a3b8;
+
+  --color-primary:         #2563eb;
+  --color-primary-dark:    #1d4ed8;
+  --color-primary-surface: #eff6ff;
+  --color-primary-border:  #bfdbfe;
+  --color-primary-text:    #1e40af;
+
+  --color-danger:         #dc2626;
+  --color-danger-dark:    #b91c1c;
+  --color-danger-surface: #fef2f2;
+  --color-danger-border:  #fecaca;
+  --color-danger-text:    #991b1b;
+
+  --color-success:         #16a34a;
+  --color-success-surface: #f0fdf4;
+  --color-success-border:  #bbf7d0;
+  --color-success-text:    #15803d;
+
+  --color-warning:         #d97706;
+  --color-warning-surface: #fffbeb;
+  --color-warning-border:  #fde68a;
+  --color-warning-text:    #92400e;
+
+  /* Header bar */
+  --color-topbar-bg:         #1e3a5f;
+  --color-topbar-text:       #f1f5f9;
+  --color-topbar-text-muted: #94a3b8;
+  --color-topbar-text-faint: #475569;
+  --color-topbar-divider:    #2d4a6a;
+  --color-topbar-btn-hover:  #253f61;
+  --color-topbar-tab-active: #60a5fa;
+
+  /* Auth / split-screen */
+  --color-auth-bg-from: #0f2744;
+  --color-auth-bg-to:   #134e8a;
+}

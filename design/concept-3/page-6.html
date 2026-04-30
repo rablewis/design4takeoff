@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Table — Concept 3 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="../concept-1/themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 3</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link active">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Inline Forms</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="app-shell">
+
+  <!-- Section nav -->
+  <aside class="section-nav">
+    <div class="sn-logo-slot">
+      <button class="sn-logo-btn" title="Take-off">T</button>
+    </div>
+    <nav class="sn-nav">
+      <button class="sn-btn" title="Workspace" onclick="location.href='page-4.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </button>
+      <button class="sn-btn" title="Annotations" onclick="location.href='page-5.html'" style="position:relative">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <span class="sn-badge">3</span>
+      </button>
+      <button class="sn-btn active" title="Cost table" onclick="location.href='page-6.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      </button>
+    </nav>
+    <div class="sn-bottom">
+      <button class="sn-btn" title="Account status"><span class="sn-status-dot green"></span></button>
+      <button class="sn-btn" title="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Context panel: Cost table section -->
+  <aside class="context-panel">
+    <div class="cp-section active">
+
+      <div class="cp-header">
+        <div class="cp-heading">Cost table</div>
+        <div class="cp-sub">at scale 1:50 &nbsp;·&nbsp; A1 paper</div>
+      </div>
+
+      <div class="cp-body">
+        <div class="cp-grand-total-lbl">Grand total</div>
+        <div class="cp-grand-total-val" id="cp-grand">£10,208.00</div>
+
+        <button class="cp-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v10M4 7l4 4 4-4M2 13h12"/></svg>
+          Download annotated PDF
+        </button>
+
+        <div class="cp-sep"></div>
+
+        <div class="cp-lbl">Show</div>
+        <div class="cp-filter-row">
+          <button class="cp-filter-btn active" onclick="filterRows('all',this)">All</button>
+          <button class="cp-filter-btn" onclick="filterRows('counts',this)">Counts</button>
+          <button class="cp-filter-btn" onclick="filterRows('linear',this)">Linear/Area</button>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Main content: Cost table -->
+  <main class="main-content">
+    <div class="content-view">
+
+      <div class="content-subhdr">
+        <div class="content-subhdr-title">Cost table</div>
+        <div class="content-subhdr-sub">Block A — Ground Floor &nbsp;·&nbsp; Scale 1:50 &nbsp;·&nbsp; A1 paper</div>
+      </div>
+
+      <div class="content-scroll">
+        <div class="content-wrap wide">
+
+          <div class="card" style="overflow:hidden">
+            <div style="overflow-x:auto">
+              <table class="data-table" id="cost-table">
+                <thead>
+                  <tr>
+                    <th style="min-width:180px">Item</th>
+                    <th class="r" style="min-width:80px">Qty</th>
+                    <th class="r" style="min-width:108px">Labour (£)</th>
+                    <th class="r" style="min-width:108px">Material (£)</th>
+                    <th class="r" style="min-width:108px">Rate (£) <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:10px;opacity:.7">override</span></th>
+                    <th class="r" style="min-width:100px">Total (£)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="group-row counts-row"><td colspan="6">Symbol counts</td></tr>
+                  <tr data-qty="12" class="counts-row">
+                    <td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td>
+                    <td class="r qty-cell">12</td>
+                    <td class="r"><input class="cost-input" type="number" value="45.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="12.50" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-0">690.00</td>
+                  </tr>
+                  <tr data-qty="8" class="counts-row">
+                    <td><span class="item-dot" style="background:#10b981"></span>Light Switch</td>
+                    <td class="r qty-cell">8</td>
+                    <td class="r"><input class="cost-input" type="number" value="30.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="8.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-1">304.00</td>
+                  </tr>
+                  <tr data-qty="15" class="counts-row">
+                    <td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td>
+                    <td class="r qty-cell">15</td>
+                    <td class="r"><input class="cost-input" type="number" value="55.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="18.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-2">1,095.00</td>
+                  </tr>
+                  <tr data-qty="4" class="counts-row">
+                    <td><span class="item-dot" style="background:#ef4444"></span>Extractor Fan</td>
+                    <td class="r qty-cell">4</td>
+                    <td class="r"><input class="cost-input" type="number" value="90.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="35.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-3">500.00</td>
+                  </tr>
+                  <tr data-qty="5" class="counts-row">
+                    <td><span class="item-dot" style="background:#8b5cf6"></span>Smoke Detector</td>
+                    <td class="r qty-cell">5</td>
+                    <td class="r"><input class="cost-input" type="number" value="25.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="22.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-4">235.00</td>
+                  </tr>
+                  <tr class="group-row linear-row"><td colspan="6">Measurement categories</td></tr>
+                  <tr data-qty="49" class="linear-row">
+                    <td><span class="item-dot" style="background:#06b6d4"></span>Wall Length</td>
+                    <td class="r qty-cell">49 m</td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="12.50" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-5">612.50</td>
+                  </tr>
+                  <tr data-qty="32" class="linear-row">
+                    <td><span class="item-dot" style="background:#f97316"></span>Skirting</td>
+                    <td class="r qty-cell">32 m</td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="8.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-6">256.00</td>
+                  </tr>
+                  <tr class="group-row linear-row"><td colspan="6">Area categories</td></tr>
+                  <tr data-qty="78.50" class="linear-row">
+                    <td><span class="item-dot" style="background:#65a30d"></span>Floor Area</td>
+                    <td class="r qty-cell">78.50 m²</td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="45.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-7">3,532.50</td>
+                  </tr>
+                  <tr data-qty="78.50" class="linear-row">
+                    <td><span class="item-dot" style="background:#6366f1"></span>Ceiling Area</td>
+                    <td class="r qty-cell">78.50 m²</td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" placeholder="—" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r"><input class="cost-input" type="number" value="38.00" min="0" step="0.01" oninput="recalcRow(this)"></td>
+                    <td class="r total-cell" id="tot-8">2,983.00</td>
+                  </tr>
+                  <tr class="grand-total-row">
+                    <td colspan="5">Grand total</td>
+                    <td class="r" id="grand-total">£10,208.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Measurements detail -->
+          <div class="card">
+            <div class="card-head">
+              <span class="card-title">Measurement detail</span>
+              <span class="card-meta">at scale 1:50</span>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead><tr><th>Category</th><th class="r">Total distance</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="item-dot" style="background:#06b6d4"></span>Wall Length</td><td class="r">48.250 m</td></tr>
+                  <tr><td><span class="item-dot" style="background:#f97316"></span>Skirting</td><td class="r">31.760 m</td></tr>
+                  <tr class="total-row"><td>Total</td><td class="r">80.010 m</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = '../concept-1/themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c3-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c3-theme'); if (s) setTheme(s); } catch(e) {}
+
+function recalcRow(input) {
+  const row = input.closest('tr');
+  const qty = parseFloat(row.dataset.qty) || 0;
+  const inputs = row.querySelectorAll('input');
+  const labour   = parseFloat(inputs[0].value) || 0;
+  const material = parseFloat(inputs[1].value) || 0;
+  const rateOverride = parseFloat(inputs[2].value);
+  const rate = isNaN(rateOverride) ? (labour + material) : rateOverride;
+  row.querySelector('.total-cell').textContent =
+    (qty * rate).toLocaleString('en-GB', {minimumFractionDigits:2, maximumFractionDigits:2});
+  recalcGrand();
+}
+function recalcGrand() {
+  let sum = 0;
+  document.querySelectorAll('.total-cell').forEach(c => { sum += parseFloat(c.textContent.replace(/,/g,'')) || 0; });
+  const fmt = '£' + sum.toLocaleString('en-GB', {minimumFractionDigits:2, maximumFractionDigits:2});
+  document.getElementById('grand-total').textContent = fmt;
+  document.getElementById('cp-grand').textContent = fmt;
+}
+
+function filterRows(type, btn) {
+  document.querySelectorAll('.cp-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.counts-row').forEach(r => r.style.display = (type === 'linear') ? 'none' : '');
+  document.querySelectorAll('.linear-row').forEach(r => r.style.display = (type === 'counts') ? 'none' : '');
+}
+</script>
+</body>
+</html>

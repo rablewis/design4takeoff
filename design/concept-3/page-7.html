@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inline Forms — Concept 3 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="../concept-1/themes/light.css">
+<style>
+  /* Page-7 specific overrides */
+  .showcase-body { background: var(--color-page-bg); flex: 1; overflow-y: auto; }
+  .inline-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; padding: 24px; max-width: 1200px; }
+  .inline-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden; }
+  .inline-card-tag { font-size: var(--font-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-subtle); padding: 14px 16px 0; margin-bottom: -4px; }
+  .inline-card-panel { padding: 12px 14px; }
+  /* Simulate a context panel header strip inside each card */
+  .panel-sim-hdr { padding: 10px 14px; border-bottom: 1px solid var(--color-border); margin: -12px -14px 12px; }
+  .panel-sim-hdr-title { font-size: var(--font-sm); font-weight: 700; color: var(--color-text); }
+  .panel-sim-hdr-sub { font-size: var(--font-xs); color: var(--color-text-muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 3</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link active">Inline Forms</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="app-shell">
+
+  <!-- Section nav (workspace active, since inline forms appear in the workspace section) -->
+  <aside class="section-nav">
+    <div class="sn-logo-slot"><button class="sn-logo-btn">T</button></div>
+    <nav class="sn-nav">
+      <button class="sn-btn active" onclick="location.href='page-4.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </button>
+      <button class="sn-btn" style="position:relative" onclick="location.href='page-5.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <span class="sn-badge">3</span>
+      </button>
+      <button class="sn-btn" onclick="location.href='page-6.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      </button>
+    </nav>
+    <div class="sn-bottom">
+      <button class="sn-btn"><span class="sn-status-dot green"></span></button>
+      <button class="sn-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></button>
+    </div>
+  </aside>
+
+  <!-- Context panel stub (the workspace header) -->
+  <aside class="context-panel" style="background:var(--color-surface-alt);">
+    <div class="cp-header">
+      <span class="cp-job-name">Block A — Ground Floor</span>
+      <div class="cp-page-nav">
+        <button class="cp-page-btn" disabled>&#8249;</button>
+        <span class="cp-page-label">1 / 3</span>
+        <button class="cp-page-btn">&#8250;</button>
+      </div>
+    </div>
+    <div style="padding:16px 14px; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.6;">
+      ← Inline data entry and confirmations replace the tool controls inside the context panel. Static states are shown in the main area.
+    </div>
+  </aside>
+
+  <!-- Main content: showcase grid -->
+  <main class="main-content">
+    <div class="showcase-body">
+
+      <div style="padding:24px 24px 0">
+        <h1 style="font-size:var(--font-xl);font-weight:800;color:var(--color-text);letter-spacing:-.02em;margin-bottom:6px">Inline forms &amp; confirmations</h1>
+        <p style="font-size:var(--font-base);color:var(--color-text-muted);line-height:1.6;max-width:600px">Data entry and destructive confirmations happen inline inside the context panel — no modals, no overlays. The tool controls slide out; the form slides in. Each card below simulates the context panel in a different inline state.</p>
+      </div>
+
+      <div class="inline-grid">
+
+        <!-- Name Room -->
+        <div class="inline-card">
+          <div class="inline-card-tag">After closing annotation boundary</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Workspace &nbsp;·&nbsp; Annotate</div>
+            </div>
+            <div class="cp-inline-form">
+              <div class="cp-inline-title">Name this room</div>
+              <div class="cp-inline-contents">
+                <div class="cp-lbl" style="margin-bottom:5px">Items found inside boundary</div>
+                <div class="cp-di"><span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#3b82f6;margin-right:4px;vertical-align:middle"></span>Socket Outlet</span><span class="cp-di-count">6</span></div>
+                <div class="cp-di"><span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#10b981;margin-right:4px;vertical-align:middle"></span>Light Switch</span><span class="cp-di-count">2</span></div>
+                <div class="cp-di"><span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#f59e0b;margin-right:4px;vertical-align:middle"></span>Downlight</span><span class="cp-di-count">4</span></div>
+              </div>
+              <div class="cp-inline-field">
+                <label>Room name</label>
+                <input type="text" value="Living Room" placeholder="e.g. Kitchen">
+              </div>
+              <div class="cp-inline-actions">
+                <button class="btn btn-primary btn-sm">Save room</button>
+                <button class="cp-cancel">Cancel</button>
+              </div>
+            </div>
+            <div class="cp-note" style="opacity:.5;font-size:10px">Normal annotate controls are hidden while the form is visible.</div>
+          </div>
+        </div>
+
+        <!-- Name Room — No Items -->
+        <div class="inline-card">
+          <div class="inline-card-tag">Annotation boundary — no items inside</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Workspace &nbsp;·&nbsp; Annotate</div>
+            </div>
+            <div class="cp-inline-form">
+              <div class="cp-inline-title">Name this room</div>
+              <div class="cp-inline-contents">
+                <div class="cp-lbl" style="margin-bottom:5px">Items found inside boundary</div>
+                <div style="font-size:var(--font-sm);color:var(--color-text-muted);font-style:italic">No items found inside this boundary.</div>
+              </div>
+              <div class="cp-inline-field">
+                <label>Room name</label>
+                <input type="text" placeholder="e.g. Utility Room">
+              </div>
+              <div class="cp-inline-actions">
+                <button class="btn btn-primary btn-sm">Save room</button>
+                <button class="cp-cancel">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Label Measurement -->
+        <div class="inline-card">
+          <div class="inline-card-tag">After placing measurement end point</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Workspace &nbsp;·&nbsp; Measure</div>
+            </div>
+            <div class="cp-inline-form">
+              <div class="cp-inline-title">Record measurement</div>
+              <div class="cp-inline-metric">8.450 <span style="font-size:14px;font-weight:400;color:var(--color-text-muted)">m</span></div>
+              <div class="cp-inline-metric-note">At scale 1:50 on A1 paper</div>
+              <div class="cp-inline-field">
+                <label>Label</label>
+                <input type="text" value="Wall Length" list="meas-cats" placeholder="Enter or select a label">
+                <datalist id="meas-cats"><option value="Wall Length"><option value="Skirting"></datalist>
+                <div class="cp-inline-hint">Enter an existing label to add to its total, or a new label to create a category.</div>
+              </div>
+              <div class="cp-inline-actions">
+                <button class="btn btn-primary btn-sm">Save</button>
+                <button class="cp-cancel">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Label Area -->
+        <div class="inline-card">
+          <div class="inline-card-tag">After closing area polygon</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Workspace &nbsp;·&nbsp; Area</div>
+            </div>
+            <div class="cp-inline-form">
+              <div class="cp-inline-title">Record area</div>
+              <div class="cp-inline-metric">24.75 <span style="font-size:14px;font-weight:400;color:var(--color-text-muted)">m²</span></div>
+              <div class="cp-inline-metric-note">At scale 1:50 on A1 paper</div>
+              <div class="cp-inline-field">
+                <label>Label</label>
+                <input type="text" value="Floor Area" list="area-cats" placeholder="Enter or select a label">
+                <datalist id="area-cats"><option value="Floor Area"><option value="Ceiling Area"></datalist>
+                <div class="cp-inline-hint">Enter an existing label to add to its total, or a new label to create a category.</div>
+              </div>
+              <div class="cp-inline-actions">
+                <button class="btn btn-primary btn-sm">Save</button>
+                <button class="cp-cancel">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm: Clear Workspace -->
+        <div class="inline-card">
+          <div class="inline-card-tag">Confirm — clear workspace</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Workspace</div>
+            </div>
+            <div class="cp-note">Loaded file: <strong>block-a-ground-floor.pdf</strong></div>
+            <div class="cp-confirm">
+              <div class="cp-confirm-text">Clear workspace? This removes the drawing and all markup. This cannot be undone.</div>
+              <div class="cp-confirm-actions">
+                <button class="btn btn-danger btn-sm">Confirm</button>
+                <button class="btn btn-ghost btn-sm">Cancel</button>
+              </div>
+            </div>
+            <div style="font-size:10px;color:var(--color-text-subtle);line-height:1.5">The confirmation replaces the clear button in-place. No layout shift — no dialog overlay.</div>
+          </div>
+        </div>
+
+        <!-- Confirm: Clear Legend -->
+        <div class="inline-card">
+          <div class="inline-card-tag">Confirm — clear legend</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Workspace &nbsp;·&nbsp; Legend</div>
+            </div>
+            <div class="cp-item-list" style="margin-bottom:8px">
+              <div class="cp-item"><span class="cp-swatch" style="background:#3b82f6"></span><span class="cp-item-lbl">Socket Outlet</span></div>
+              <div class="cp-item"><span class="cp-swatch" style="background:#10b981"></span><span class="cp-item-lbl">Light Switch</span></div>
+              <div class="cp-item"><span class="cp-swatch" style="background:#f59e0b"></span><span class="cp-item-lbl">Downlight</span></div>
+            </div>
+            <div class="cp-confirm">
+              <div class="cp-confirm-text">Clear legend? All items and regions will be removed.</div>
+              <div class="cp-confirm-actions">
+                <button class="btn btn-danger btn-sm">Clear</button>
+                <button class="btn btn-ghost btn-sm">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm: Clear Annotations -->
+        <div class="inline-card">
+          <div class="inline-card-tag">Confirm — clear annotations</div>
+          <div class="inline-card-panel">
+            <div class="panel-sim-hdr">
+              <div class="panel-sim-hdr-title">Annotations panel</div>
+            </div>
+            <div class="cp-room-row"><span class="cp-room-name">Living Room</span><span class="cp-room-pg">p.1</span></div>
+            <div class="cp-room-row"><span class="cp-room-name">Kitchen</span><span class="cp-room-pg">p.1</span></div>
+            <div class="cp-room-row" style="margin-bottom:8px"><span class="cp-room-name">Bedroom 1</span><span class="cp-room-pg">p.2</span></div>
+            <div class="cp-confirm">
+              <div class="cp-confirm-text">Delete all annotations? All saved room boundaries will be permanently removed.</div>
+              <div class="cp-confirm-actions">
+                <button class="btn btn-danger btn-sm">Delete</button>
+                <button class="btn btn-ghost btn-sm">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /inline-grid -->
+    </div><!-- /showcase-body -->
+  </main>
+
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = '../concept-1/themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c3-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c3-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>

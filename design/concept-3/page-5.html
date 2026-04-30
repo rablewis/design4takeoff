@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotations — Concept 3 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="../concept-1/themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 3</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link active">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Inline Forms</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="app-shell">
+
+  <!-- Section nav -->
+  <aside class="section-nav">
+    <div class="sn-logo-slot">
+      <button class="sn-logo-btn" title="Take-off">T</button>
+    </div>
+    <nav class="sn-nav">
+      <button class="sn-btn" title="Workspace" onclick="location.href='page-4.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </button>
+      <button class="sn-btn active" title="Annotations" onclick="location.href='page-5.html'" style="position:relative">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <span class="sn-badge">3</span>
+      </button>
+      <button class="sn-btn" title="Cost table" onclick="location.href='page-6.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      </button>
+    </nav>
+    <div class="sn-bottom">
+      <button class="sn-btn" title="Account status"><span class="sn-status-dot green"></span></button>
+      <button class="sn-btn" title="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Context panel: Annotations section -->
+  <aside class="context-panel">
+    <div class="cp-section active">
+
+      <div class="cp-header">
+        <div class="cp-heading">Annotations</div>
+        <div class="cp-sub">3 rooms across 2 pages</div>
+      </div>
+
+      <div class="cp-body">
+        <button class="cp-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v10M4 7l4 4 4-4M2 13h12"/></svg>
+          Download annotated PDF
+        </button>
+
+        <div class="cp-sep"></div>
+
+        <div class="cp-lbl">Rooms</div>
+        <div>
+          <div class="cp-room-row" onclick="document.getElementById('room-lr').scrollIntoView({behavior:'smooth'})">
+            <span class="cp-room-name">Living Room</span>
+            <span class="cp-room-pg">p.1</span>
+          </div>
+          <div class="cp-room-row" onclick="document.getElementById('room-k').scrollIntoView({behavior:'smooth'})">
+            <span class="cp-room-name">Kitchen</span>
+            <span class="cp-room-pg">p.1</span>
+          </div>
+          <div class="cp-room-row" onclick="document.getElementById('room-b1').scrollIntoView({behavior:'smooth'})">
+            <span class="cp-room-name">Bedroom 1</span>
+            <span class="cp-room-pg">p.2</span>
+          </div>
+        </div>
+
+        <div class="cp-sep"></div>
+
+        <button class="cp-btn danger">✕ Clear all annotations</button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Main content: Annotations report -->
+  <main class="main-content">
+    <div class="content-view">
+
+      <div class="content-subhdr">
+        <div class="content-subhdr-title">Annotations report</div>
+        <div class="content-subhdr-sub">3 rooms &nbsp;·&nbsp; 2 pages &nbsp;·&nbsp; Block A — Ground Floor</div>
+      </div>
+
+      <div class="content-scroll">
+        <div class="content-wrap">
+
+          <!-- Plain-text summary -->
+          <div class="card">
+            <div class="card-head">
+              <span class="card-title">Plain-text summary</span>
+              <button class="copy-btn" style="position:static" onclick="copyText()">⧉ Copy</button>
+            </div>
+            <div class="card-body" style="padding:0">
+              <div class="summary-box" id="summary-text" style="border:none;border-radius:0">Living Room (Page 1)
+  Socket Outlet: 6
+  Light Switch: 2
+  Downlight: 4
+  Total items: 12
+
+Kitchen (Page 1)
+  Socket Outlet: 4
+  Light Switch: 1
+  Downlight: 3
+  Extractor Fan: 2
+  Total items: 10
+
+Bedroom 1 (Page 2)
+  Socket Outlet: 2
+  Downlight: 4
+  Smoke Detector: 1
+  Total items: 7</div>
+            </div>
+          </div>
+
+          <!-- Living Room -->
+          <div class="card" id="room-lr">
+            <div class="card-head">
+              <div class="room-head"><span class="room-name">Living Room</span><span class="room-page-tag">Page 1</span></div>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead><tr><th>Item</th><th class="r">Count</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td><td class="r">6</td></tr>
+                  <tr><td><span class="item-dot" style="background:#10b981"></span>Light Switch</td><td class="r">2</td></tr>
+                  <tr><td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td><td class="r">4</td></tr>
+                  <tr class="total-row"><td>Total</td><td class="r">12</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Kitchen -->
+          <div class="card" id="room-k">
+            <div class="card-head">
+              <div class="room-head"><span class="room-name">Kitchen</span><span class="room-page-tag">Page 1</span></div>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead><tr><th>Item</th><th class="r">Count</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td><td class="r">4</td></tr>
+                  <tr><td><span class="item-dot" style="background:#10b981"></span>Light Switch</td><td class="r">1</td></tr>
+                  <tr><td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td><td class="r">3</td></tr>
+                  <tr><td><span class="item-dot" style="background:#ef4444"></span>Extractor Fan</td><td class="r">2</td></tr>
+                  <tr class="total-row"><td>Total</td><td class="r">10</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Bedroom 1 -->
+          <div class="card" id="room-b1">
+            <div class="card-head">
+              <div class="room-head"><span class="room-name">Bedroom 1</span><span class="room-page-tag">Page 2</span></div>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead><tr><th>Item</th><th class="r">Count</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td><td class="r">2</td></tr>
+                  <tr><td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td><td class="r">4</td></tr>
+                  <tr><td><span class="item-dot" style="background:#8b5cf6"></span>Smoke Detector</td><td class="r">1</td></tr>
+                  <tr class="total-row"><td>Total</td><td class="r">7</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<div class="toast" id="toast"><span class="toast-ok">✓</span><span id="toast-msg">Copied</span></div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = '../concept-1/themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c3-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c3-theme'); if (s) setTheme(s); } catch(e) {}
+function copyText() {
+  const t = document.getElementById('summary-text').textContent;
+  navigator.clipboard?.writeText(t).then(() => {
+    document.getElementById('toast-msg').textContent = 'Copied to clipboard';
+    const el = document.getElementById('toast');
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2000);
+  });
+}
+</script>
+</body>
+</html>

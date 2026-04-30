@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — Concept 2 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 2</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link active">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Sheets</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<div class="split-auth">
+
+  <!-- ── Left panel (same as sign-in) ── -->
+  <div class="split-left">
+    <div class="split-left-bg">
+      <svg viewBox="0 0 800 650" xmlns="http://www.w3.org/2000/svg">
+        <rect width="800" height="650" fill="#e8e5d8"/>
+        <rect x="5" y="5" width="790" height="545" fill="white" stroke="#1a1a1a" stroke-width="4"/>
+        <rect x="10" y="10" width="522" height="295" fill="white"/>
+        <rect x="544" y="10" width="246" height="185" fill="white"/>
+        <rect x="544" y="207" width="246" height="103" fill="white"/>
+        <rect x="10" y="317" width="780" height="68"  fill="white"/>
+        <rect x="10" y="397" width="377" height="143" fill="white"/>
+        <rect x="399" y="397" width="391" height="143" fill="white"/>
+        <line x1="532" y1="5"   x2="532" y2="307"  stroke="#333" stroke-width="2"/>
+        <line x1="532" y1="195" x2="795" y2="195"  stroke="#333" stroke-width="2"/>
+        <line x1="5"   y1="307" x2="795" y2="307"  stroke="#333" stroke-width="2"/>
+        <line x1="5"   y1="387" x2="795" y2="387"  stroke="#333" stroke-width="2"/>
+        <line x1="389" y1="387" x2="389" y2="545"  stroke="#333" stroke-width="2"/>
+        <text x="266" y="162" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#bbb" font-weight="300">Living Room</text>
+        <text x="667" y="100" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#bbb" font-weight="300">Kitchen</text>
+        <text x="667" y="252" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#bbb" font-weight="300">Bathroom</text>
+        <text x="400" y="360" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#bbb" font-weight="300">Hallway</text>
+        <text x="198" y="475" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#bbb" font-weight="300">Bedroom 1</text>
+        <text x="594" y="475" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#bbb" font-weight="300">Bedroom 2</text>
+        <line x1="70"  y1="5"   x2="220" y2="5"   stroke="#7dd3fc" stroke-width="4"/>
+        <line x1="290" y1="5"   x2="490" y2="5"   stroke="#7dd3fc" stroke-width="4"/>
+        <line x1="570" y1="5"   x2="770" y2="5"   stroke="#7dd3fc" stroke-width="4"/>
+        <line x1="5"   y1="70"  x2="5"   y2="260" stroke="#7dd3fc" stroke-width="4"/>
+        <rect x="14" y="14" width="514" height="285" fill="rgba(101,163,13,.06)" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="5,4" opacity=".8"/>
+        <circle cx="90"  cy="100" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="240" cy="100" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="90"  cy="220" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="400" cy="220" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="590" cy="75"  r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="720" cy="75"  r="6" fill="#3b82f6" opacity=".9"/>
+        <rect x="13"  y="152" width="10" height="10" fill="#10b981" rx="2"/>
+        <rect x="520" y="152" width="10" height="10" fill="#10b981" rx="2"/>
+        <circle cx="158" cy="152" r="5" fill="#f59e0b"/>
+        <line x1="154" y1="152" x2="162" y2="152" stroke="white" stroke-width="1.5"/>
+        <line x1="158" y1="148" x2="158" y2="156" stroke="white" stroke-width="1.5"/>
+        <circle cx="80"  cy="460" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="300" cy="460" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="470" cy="460" r="6" fill="#3b82f6" opacity=".9"/>
+        <circle cx="640" cy="460" r="6" fill="#3b82f6" opacity=".9"/>
+        <line x1="5" y1="555" x2="795" y2="555" stroke="#ccc" stroke-width="1"/>
+        <text x="18" y="580" font-family="sans-serif" font-size="9" fill="#333" font-weight="700" letter-spacing=".1em">LEGEND</text>
+        <circle cx="30" cy="600" r="6" fill="#3b82f6"/>
+        <text x="44" y="604" font-family="sans-serif" font-size="10" fill="#333">Socket Outlet (13A)</text>
+        <rect x="25" y="613" width="10" height="10" fill="#10b981" rx="2"/>
+        <text x="44" y="621" font-family="sans-serif" font-size="10" fill="#333">1-Gang Light Switch</text>
+      </svg>
+    </div>
+    <div class="split-left-overlay"></div>
+    <div class="split-left-content">
+      <div class="split-app-name">Take<em>-off</em></div>
+      <div class="split-tagline">Quantity take-offs from construction drawings.</div>
+    </div>
+  </div>
+
+  <!-- ── Right panel: sign up form ── -->
+  <div class="split-right">
+    <div class="split-form">
+      <div class="split-logomark">T</div>
+      <div class="split-heading">Start your free trial</div>
+      <div class="split-subheading">14 days, no card required.</div>
+
+      <!-- Default state -->
+      <div id="form-default">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Minimum 8 characters" autocomplete="new-password">
+          <span class="hint">At least 8 characters.</span>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="showSuccess()">Create account</button>
+      </div>
+
+      <!-- Error state (click Create account again from success to reset) -->
+      <div id="form-error" style="display:none">
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" value="taken@example.com" style="border-color:var(--color-danger)">
+          <span class="error">An account with this email already exists.</span>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" value="password1">
+        </div>
+        <button class="btn btn-primary btn-full" onclick="hideError()">Create account</button>
+      </div>
+
+      <!-- Success state -->
+      <div id="form-success" style="display:none">
+        <div class="auth-success">
+          Check your inbox. A confirmation email has been sent and your 14-day trial has started.<br><br>
+          <a href="page-4.html">Go to workspace →</a>
+        </div>
+      </div>
+
+      <div class="auth-divider"></div>
+      <div class="auth-switch">Already have an account? <a href="page-1.html">Sign in</a></div>
+    </div>
+  </div>
+
+</div><!-- /split-auth -->
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c2-theme', t); } catch(e) {}
+}
+function showSuccess() {
+  document.getElementById('form-default').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+function showError() {
+  document.getElementById('form-default').style.display = 'none';
+  document.getElementById('form-error').style.display = 'block';
+}
+function hideError() {
+  document.getElementById('form-error').style.display = 'none';
+  document.getElementById('form-default').style.display = 'block';
+}
+try { const s = localStorage.getItem('c2-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>

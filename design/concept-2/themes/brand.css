@@ -1,0 +1,51 @@
+/* concept-2 / themes / brand.css — Branded teal / slate colour scheme */
+:root {
+  --color-page-bg:       #f0fdfa;
+  --color-canvas-bg:     #dff6f2;
+  --color-surface:       #ffffff;
+  --color-surface-alt:   #f0fdfa;
+  --color-surface-hover: #ccfbf1;
+
+  --color-border:        #99f6e4;
+  --color-border-strong: #5eead4;
+
+  --color-text:          #042f2e;
+  --color-text-body:     #134e4a;
+  --color-text-muted:    #0f766e;
+  --color-text-subtle:   #2dd4bf;
+
+  --color-primary:         #0d9488;
+  --color-primary-dark:    #0f766e;
+  --color-primary-surface: #ccfbf1;
+  --color-primary-border:  #5eead4;
+  --color-primary-text:    #115e59;
+
+  --color-danger:         #dc2626;
+  --color-danger-dark:    #b91c1c;
+  --color-danger-surface: #fef2f2;
+  --color-danger-border:  #fecaca;
+  --color-danger-text:    #991b1b;
+
+  --color-success:         #16a34a;
+  --color-success-surface: #f0fdf4;
+  --color-success-border:  #bbf7d0;
+  --color-success-text:    #15803d;
+
+  --color-warning:         #d97706;
+  --color-warning-surface: #fffbeb;
+  --color-warning-border:  #fde68a;
+  --color-warning-text:    #92400e;
+
+  /* Header bar */
+  --color-topbar-bg:         #042f2e;
+  --color-topbar-text:       #f0fdfa;
+  --color-topbar-text-muted: #2dd4bf;
+  --color-topbar-text-faint: #0f766e;
+  --color-topbar-divider:    #0f4441;
+  --color-topbar-btn-hover:  #0f4441;
+  --color-topbar-tab-active: #2dd4bf;
+
+  /* Auth / split-screen */
+  --color-auth-bg-from: #042f2e;
+  --color-auth-bg-to:   #0f766e;
+}

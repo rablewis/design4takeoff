@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Table Drawer — Concept 2 — Take-off</title>
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="layout.css">
+<link id="theme-link" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+
+<!-- ── Mockup nav ────────────────────────────────────────────── -->
+<nav class="mockup-nav">
+  <span class="mn-logo">Concept 2</span>
+  <div class="mn-pages">
+    <a href="page-1.html" class="mn-link">Sign In</a>
+    <a href="page-2.html" class="mn-link">Sign Up</a>
+    <a href="page-3.html" class="mn-link">Restricted</a>
+    <a href="page-4.html" class="mn-link">Workspace</a>
+    <a href="page-5.html" class="mn-link">Annotations</a>
+    <a href="page-6.html" class="mn-link active">Cost Table</a>
+    <a href="page-7.html" class="mn-link">Sheets</a>
+  </div>
+  <div class="mn-sep"></div>
+  <div class="mn-theme">
+    <span class="mn-theme-label">Theme</span>
+    <button class="mn-theme-btn active" data-theme="light" onclick="setTheme('light')">Light</button>
+    <button class="mn-theme-btn" data-theme="dark" onclick="setTheme('dark')">Dark</button>
+    <button class="mn-theme-btn" data-theme="brand" onclick="setTheme('brand')">Brand</button>
+  </div>
+  <a href="../index.html" class="mn-hub">← Hub</a>
+</nav>
+
+<!-- ── App shell ─────────────────────────────────────────────── -->
+<div class="app-shell">
+
+  <!-- Header bar -->
+  <header class="headerbar">
+    <button class="hb-appicon">T</button>
+    <div class="hb-job">
+      <span class="hb-job-name">Block A — Ground Floor</span>
+      <button class="hb-job-reset">↺</button>
+    </div>
+    <div class="hb-center">
+      <div class="hb-page-nav">
+        <button class="hb-page-btn" disabled>&#8249;</button>
+        <span class="hb-page-label">Page 1 of 3</span>
+        <button class="hb-page-btn">&#8250;</button>
+      </div>
+      <span class="hb-dot"></span>
+      <button class="hb-scale-btn">A1 <span class="hb-chevron">▾</span></button>
+      <span style="font-size:11px;color:var(--color-topbar-text-faint)">·</span>
+      <button class="hb-scale-btn">1:50 <span class="hb-chevron">▾</span></button>
+    </div>
+    <div class="hb-actions">
+      <span class="badge badge-trial">11d trial</span>
+      <div class="hb-divider"></div>
+      <button class="hb-btn hb-btn-icon">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 1H2.5L1 2.5v11L2.5 15h11l1.5-1.5v-11L13.5 1zm-5.5 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm3-8H5V3h6v2z"/></svg>
+      </button>
+      <button class="hb-btn hb-btn-icon">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v10M4 7l4 4 4-4M2 13h12"/></svg>
+      </button>
+      <div class="hb-divider"></div>
+      <button class="hb-btn" onclick="location.href='page-5.html'">
+        Annotations <span class="hb-btn-badge">3</span>
+      </button>
+      <!-- Cost table button — active state -->
+      <button class="hb-btn" style="background:var(--color-topbar-btn-hover);color:var(--color-topbar-text)" onclick="location.href='page-4.html'">Cost table</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <!-- Tool rail -->
+    <aside class="tool-rail">
+      <button class="rail-btn destructive" title="Clear workspace">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor"><path d="M2 5a2 2 0 0 1 2-2h5l2 2h5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z"/></svg>
+      </button>
+      <div class="rail-sep"></div>
+      <button class="rail-btn" title="Legend">⊞</button>
+      <button class="rail-btn active" title="Count">◉</button>
+      <button class="rail-btn" title="Annotate">⬡</button>
+      <button class="rail-btn" title="Measure">⟺</button>
+      <button class="rail-btn" title="Area">▦</button>
+      <button class="rail-btn" title="Erase">✕</button>
+      <div class="rail-sep"></div>
+      <button class="rail-btn" title="Collapse panel">◁</button>
+    </aside>
+
+    <!-- Canvas -->
+    <main class="canvas-area">
+
+      <!-- Drawing (left of drawer) -->
+      <div class="drawing-wrap" style="right:var(--drawer-w)">
+        <svg viewBox="0 0 800 775" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="775" fill="#f2efe6"/>
+          <rect x="5" y="5" width="790" height="590" fill="white" stroke="#1a1a1a" stroke-width="5"/>
+          <rect x="10" y="10" width="522" height="325" fill="white"/>
+          <rect x="544" y="10" width="246" height="200" fill="white"/>
+          <rect x="544" y="222" width="246" height="113" fill="white"/>
+          <rect x="10" y="347" width="780" height="75"  fill="white"/>
+          <rect x="10" y="434" width="377" height="151" fill="white"/>
+          <rect x="399" y="434" width="391" height="151" fill="white"/>
+          <line x1="532" y1="5"   x2="532" y2="337"  stroke="#333" stroke-width="2.5"/>
+          <line x1="532" y1="210" x2="795" y2="210"  stroke="#333" stroke-width="2.5"/>
+          <line x1="5"   y1="337" x2="795" y2="337"  stroke="#333" stroke-width="2.5"/>
+          <line x1="5"   y1="424" x2="795" y2="424"  stroke="#333" stroke-width="2.5"/>
+          <line x1="389" y1="424" x2="389" y2="595"  stroke="#333" stroke-width="2.5"/>
+          <line x1="70"  y1="5"   x2="220" y2="5"   stroke="#7dd3fc" stroke-width="5"/>
+          <line x1="280" y1="5"   x2="485" y2="5"   stroke="#7dd3fc" stroke-width="5"/>
+          <line x1="570" y1="5"   x2="770" y2="5"   stroke="#7dd3fc" stroke-width="5"/>
+          <text x="266" y="178" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#aaa" font-weight="300">Living Room</text>
+          <text x="667" y="110" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#aaa" font-weight="300">Kitchen</text>
+          <text x="198" y="520" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#aaa" font-weight="300">Bedroom 1</text>
+          <!-- Measurement line -->
+          <line x1="16" y1="24" x2="528" y2="24" stroke="#06b6d4" stroke-width="2"/>
+          <polygon points="16,20 16,28 8,24" fill="#06b6d4"/>
+          <polygon points="528,20 528,28 536,24" fill="#06b6d4"/>
+          <rect x="222" y="14" width="88" height="16" fill="rgba(255,255,255,.88)" rx="3"/>
+          <text x="266" y="26" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#0e7490" font-weight="600">26.800 m</text>
+          <!-- Area fill -->
+          <rect x="12" y="12" width="518" height="321" fill="rgba(101,163,13,.08)" stroke="rgba(101,163,13,.35)" stroke-width="1.5"/>
+          <!-- Count marks -->
+          <circle cx="90"  cy="110" r="7" fill="#3b82f6" opacity=".9"/>
+          <circle cx="240" cy="110" r="7" fill="#3b82f6" opacity=".9"/>
+          <circle cx="90"  cy="240" r="7" fill="#3b82f6" opacity=".9"/>
+          <rect x="13"  y="162" width="11" height="11" fill="#10b981" rx="2"/>
+          <circle cx="160" cy="165" r="6" fill="#f59e0b" opacity=".9"/>
+          <line x1="156" y1="165" x2="164" y2="165" stroke="white" stroke-width="1.5"/>
+          <line x1="160" y1="161" x2="160" y2="169" stroke="white" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Mode pill -->
+      <div class="mode-pill visible" style="left:12px">
+        <span class="mode-pill-icon">◉</span>
+        Count mode
+      </div>
+
+      <!-- Minimap -->
+      <div class="minimap-ctrl" style="right:calc(var(--drawer-w) + 12px)">
+        <svg viewBox="0 0 800 775" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="775" fill="#e8e5d8"/>
+          <rect x="5" y="5" width="790" height="590" fill="white" stroke="#555" stroke-width="5"/>
+          <line x1="532" y1="5"   x2="532" y2="337" stroke="#555" stroke-width="3"/>
+          <line x1="5"   y1="337" x2="795" y2="337" stroke="#555" stroke-width="3"/>
+          <line x1="5"   y1="424" x2="795" y2="424" stroke="#555" stroke-width="3"/>
+          <line x1="389" y1="424" x2="389" y2="595" stroke="#555" stroke-width="3"/>
+          <rect x="10" y="10" width="400" height="350" fill="rgba(37,99,235,.12)" stroke="#2563eb" stroke-width="6"/>
+        </svg>
+      </div>
+
+      <!-- Zoom -->
+      <div class="zoom-ctrl">
+        <button class="zoom-btn">−</button>
+        <span class="zoom-pct">100%</span>
+        <button class="zoom-btn">+</button>
+        <div class="zoom-sep"></div>
+        <button class="zoom-reset-lnk">Reset</button>
+      </div>
+
+      <!-- ── Cost table right drawer ── -->
+      <aside class="right-drawer">
+        <div class="drawer-head">
+          <span class="drawer-title">Cost table <span class="drawer-title-meta">at 1:50</span></span>
+          <div class="drawer-head-actions">
+            <button class="drawer-icon-btn" title="Download PDF">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v10M4 7l4 4 4-4M2 13h12"/></svg>
+            </button>
+            <button class="drawer-icon-btn" title="Close" onclick="location.href='page-4.html'">×</button>
+          </div>
+        </div>
+        <div class="drawer-body">
+
+          <!-- Main cost table -->
+          <div style="overflow-x:auto;margin-bottom:20px;">
+            <table class="data-table" style="min-width:520px">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th class="r">Qty</th>
+                  <th class="r">Labour</th>
+                  <th class="r">Material</th>
+                  <th class="r">Rate</th>
+                  <th class="r">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row"><td colspan="6">Legend items</td></tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#3b82f6"></span>Socket Outlet</td>
+                  <td class="r qty-cell">12</td>
+                  <td class="r"><input class="cost-input" type="number" value="25" placeholder="—" oninput="calcRow(this)"></td>
+                  <td class="r"><input class="cost-input" type="number" value="8" placeholder="—" oninput="calcRow(this)"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—" oninput="calcRow(this)"></td>
+                  <td class="r total-cell" id="row-socket">396.00</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#10b981"></span>Light Switch</td>
+                  <td class="r qty-cell">8</td>
+                  <td class="r"><input class="cost-input" type="number" value="18" placeholder="—" oninput="calcRow(this)"></td>
+                  <td class="r"><input class="cost-input" type="number" value="6" placeholder="—" oninput="calcRow(this)"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—" oninput="calcRow(this)"></td>
+                  <td class="r total-cell">192.00</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#f59e0b"></span>Downlight</td>
+                  <td class="r qty-cell">15</td>
+                  <td class="r"><input class="cost-input" type="number" value="30" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" value="22" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r total-cell">780.00</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#ef4444"></span>Extractor Fan</td>
+                  <td class="r qty-cell">4</td>
+                  <td class="r"><input class="cost-input" type="number" value="45" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" value="35" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r total-cell">320.00</td>
+                </tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#8b5cf6"></span>Smoke Detector</td>
+                  <td class="r qty-cell">5</td>
+                  <td class="r"><input class="cost-input" type="number" value="20" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" value="28" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r total-cell">240.00</td>
+                </tr>
+                <tr class="group-row"><td colspan="6">Measurement categories</td></tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#06b6d4"></span>Wall Length</td>
+                  <td class="r qty-cell">49 m</td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" value="12" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r total-cell">588.00</td>
+                </tr>
+                <tr class="group-row"><td colspan="6">Area categories</td></tr>
+                <tr>
+                  <td><span class="item-dot" style="background:#65a30d"></span>Floor Area</td>
+                  <td class="r qty-cell">78.50 m²</td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" value="45" placeholder="—"></td>
+                  <td class="r"><input class="cost-input" type="number" placeholder="—"></td>
+                  <td class="r total-cell">3,532.50</td>
+                </tr>
+                <tr class="grand-total-row">
+                  <td colspan="5">Grand total</td>
+                  <td class="r">£6,048.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Measurement detail table -->
+          <div style="font-size:var(--font-sm);font-weight:700;color:var(--color-text);margin-bottom:8px;">
+            Measurement detail <span style="font-weight:400;color:var(--color-text-muted)">at 1:50 on A1</span>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Category</th><th class="r">Total distance</th></tr></thead>
+            <tbody>
+              <tr><td><span class="item-dot" style="background:#06b6d4"></span>Wall Length</td><td class="r">48.250 m</td></tr>
+              <tr><td><span class="item-dot" style="background:#f97316"></span>Skirting</td><td class="r">31.760 m</td></tr>
+              <tr class="total-row"><td>Total</td><td class="r">80.010 m</td></tr>
+            </tbody>
+          </table>
+
+        </div>
+      </aside>
+
+    </main>
+  </div>
+</div>
+
+<script>
+function setTheme(t) {
+  document.getElementById('theme-link').href = 'themes/' + t + '.css';
+  document.querySelectorAll('.mn-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === t));
+  try { localStorage.setItem('c2-theme', t); } catch(e) {}
+}
+try { const s = localStorage.getItem('c2-theme'); if (s) setTheme(s); } catch(e) {}
+</script>
+</body>
+</html>
