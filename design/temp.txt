@@ -1,3 +1,0 @@
-Review docs/concept-1.md and the web site mockup in design/concept-1/. Add a new web site mockup in design/concept-2/ that implements the design ideas
-  in docs/concept-2. Add the concept-2 mockup to the hub in design/index.html. Use the same type of mockup navigation bar found at the top of the pages in
-  the concept-1 mockup.
